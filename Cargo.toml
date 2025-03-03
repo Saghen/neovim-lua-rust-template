@@ -1,0 +1,11 @@
+[package]
+name = "your-plugin-rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "lua/your-plugin/rust/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+mlua = { version = "0.10.2", features = ["module", "luajit"] }

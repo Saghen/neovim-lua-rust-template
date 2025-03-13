@@ -21,12 +21,14 @@ Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed 
 ```lua
 {
   'username/your-plugin',
+
   -- see lazy.nvim docs (`config.dev`): https://lazy.folke.io/configuration
   dev = true,
 
+  -- optional, see `lua/init.lua`
   dependencies = 'saghen/blink.download',
-  build = 'cargo build --release',
 
+  build = 'cargo build --release',
   opts = {}
 }
 ```
@@ -38,7 +40,8 @@ Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed 
   'username/your-plugin',
   version = '*', -- only required with prebuilt binaries
 
-  -- download prebuilt binaries, from github releases
+  -- optional, see `lua/init.lua`
+  -- download prebuilt binaries, from github releases, and setup `cpath`
   dependencies = 'saghen/blink.download',
   -- OR build from source
   build = 'cargo build --release',

@@ -15,3 +15,32 @@ A template for creating Neovim plugins in Lua with an accompanying Rust library.
 2. Build with `cargo build --release`
 3. Install with your plugin manager of choice
     - For example, with lazy.nvim using `dev = { path = "~/path/to/parent/folder" }` (one level higher than this folder) and `{ 'username/your-plugin', dev = true }`
+
+
+## Installation
+
+### Development
+
+```lua
+{
+  'username/your-plugin',
+  dev = true,
+  build = 'cargo build --release',
+  opts = {}
+}
+```
+
+### Stable
+
+```lua
+{
+  'username/your-plugin',
+  version = '*', -- only required with prebuilt binaries
+
+  -- download prebuilt binaries, from github releases
+  dependencies = 'saghen/blink.download',
+  -- OR build from source
+  build = 'cargo build --release',
+
+  opts = {}
+}

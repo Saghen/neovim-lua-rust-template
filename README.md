@@ -2,20 +2,17 @@
 
 A template for creating Neovim plugins in Lua with an accompanying Rust library.
 
-## Usage
+## Getting Started
 
-1. Rename all instances of `your-plugin` to the name of your plugin
-    - `name` in `Cargo.toml`
-    - `lua/your-plugin` directory
-    - `fn your_plugin_rust` in `lua/your-plugin/rust/lib.rs`
-    - `require('your_plugin_rust')` in `lua/your-plugin/rust/init.lua`
-    - All instances of `require('your-plugin...`
-    - Types in `lua/your-plugin/config.lua`
-    - Library name (in matrix) in `.github/workflows/release.yaml`
-2. Build with `cargo build --release`
-3. Install with your plugin manager of choice
-    - For example, with lazy.nvim using `dev = { path = "~/path/to/parent/folder" }` (one level higher than this folder) and `{ 'username/your-plugin', dev = true }`
+Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed if you're missing autocompletion in Lua files. Rename all instances of `your-plugin` to the name of your plugin.
 
+- `name` in `Cargo.toml`
+- `lua/your-plugin` directory
+- `fn your_plugin` in `lua/your-plugin/rust/lib.rs`
+- `require('your_plugin')` in `lua/your-plugin/rust/init.lua`
+- All instances of `require('your-plugin...`
+- Types in `lua/your-plugin/config.lua`
+- Library name (in matrix) in `.github/workflows/release.yaml`
 
 ## Installation
 
@@ -24,8 +21,12 @@ A template for creating Neovim plugins in Lua with an accompanying Rust library.
 ```lua
 {
   'username/your-plugin',
+  -- see lazy.nvim docs (`config.dev`): https://lazy.folke.io/configuration
   dev = true,
+
+  dependencies = 'saghen/blink.download',
   build = 'cargo build --release',
+
   opts = {}
 }
 ```

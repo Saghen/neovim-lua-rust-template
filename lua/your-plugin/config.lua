@@ -11,8 +11,8 @@
 
 --- @type your-plugin.ConfigStrict
 local config = {
-	foo = "baz",
-	bar = 0,
+  foo = 'baz',
+  bar = 0,
 }
 
 --- @type your-plugin.ConfigStrict
@@ -21,17 +21,15 @@ local M = {}
 
 --- @param config your-plugin.ConfigStrict
 function M.validate(config)
-	-- use vim.validate to validate the config
+  -- use vim.validate to validate the config
 end
 
 --- @param user_config your-plugin.Config
 function M.merge_with(user_config)
-	config = vim.tbl_deep_extend("force", config, user_config)
-	M.validate(config)
+  config = vim.tbl_deep_extend('force', config, user_config)
+  M.validate(config)
 end
 
 return setmetatable(M, {
-	__index = function(_, k)
-		return config[k]
-	end,
+  __index = function(_, k) return config[k] end,
 })

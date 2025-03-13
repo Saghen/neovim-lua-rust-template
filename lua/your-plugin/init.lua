@@ -44,7 +44,7 @@ function plugin.finish_setup(rust_module)
   vim.api.nvim_create_user_command('Math', function(args)
     local a = args.fargs[1]
     local b = args.fargs[2]
-    local add, multi = require('your-plugin.rust').math(a, b)
+    local add, multi = rust_module.math(a, b)
 
     print('Added: ' .. add)
     print('Multiplied: ' .. multi)

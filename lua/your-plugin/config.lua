@@ -2,6 +2,7 @@
 --- and a Config which marks all fields as optional, for use by the user like:
 --- --- @module 'your-plugin'
 --- --- @type your-plugin.Config
+--- opts = {}
 
 --- @class your-plugin.ConfigStrict
 --- @field foo string

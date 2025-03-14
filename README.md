@@ -26,7 +26,7 @@ rg -l 'your-username' | xargs sed -i 's/your-username/new-username/g'
   -- see lazy.nvim docs (`config.dev`): https://lazy.folke.io/configuration
   dev = true,
 
-  -- optional, see `lua/init.lua`
+  -- optional, see `lua/your-plugin/init.lua`
   dependencies = 'saghen/blink.download',
 
   build = 'cargo build --release',
@@ -41,7 +41,7 @@ rg -l 'your-username' | xargs sed -i 's/your-username/new-username/g'
   'your-username/your-plugin',
   version = '*', -- only required with prebuilt binaries
 
-  -- optional, see `lua/init.lua`
+  -- optional, see `lua/your-plugin/init.lua`
   -- download prebuilt binaries, from github releases, and setup `cpath`
   dependencies = 'saghen/blink.download',
   -- OR build from source

@@ -43,7 +43,7 @@ function plugin.download_if_available(callback)
       vim.notify('[your-plugin] Downloading prebuilt binary...', vim.log.levels.INFO, { title = 'your-plugin' })
     end,
 
-    root_dir,
+    root_dir = root_dir,
     output_dir = '/target/release',
     binary_name = 'your_plugin', -- excluding `lib` prefix
   }, callback)

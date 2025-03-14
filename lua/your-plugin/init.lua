@@ -33,7 +33,7 @@ function plugin.download_if_available(callback)
     -- omit this property to disable downloading
     -- i.e. https://github.com/Saghen/blink.delimiters/releases/download/v0.1.0/x86_64-unknown-linux-gnu.so
     download_url = function(version, system_triple, extension)
-      return 'https://github.com/username/your-plugin/releases/download/'
+      return 'https://github.com/your-username/your-plugin/releases/download/'
         .. version
         .. '/'
         .. system_triple

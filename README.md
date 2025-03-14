@@ -6,13 +6,14 @@ A template for creating Neovim plugins in Lua with an accompanying Rust library.
 
 Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed if you're missing autocompletion in Lua files. Rename all instances of `your-plugin` to the name of your plugin.
 
-- `name` in `Cargo.toml`
-- `lua/your-plugin` directory
-- `fn your_plugin` in `lua/your-plugin/rust/lib.rs`
-- `require('your_plugin')` in `lua/your-plugin/rust/init.lua`
-- All instances of `require('your-plugin...`
-- Types in `lua/your-plugin/config.lua`
-- Library name (in matrix) in `.github/workflows/release.yaml`
+```bash
+mv lua/your-plugin lua/new-name
+
+rg -l 'your-plugin' | xargs sed -i 's/your-plugin/new-name/g'
+rg -l 'your_plugin' | xargs sed -i 's/your_plugin/new_name/g'
+
+rg -l 'your-username' | xargs sed -i 's/your-username/new-username/g'
+```
 
 ## Installation
 
@@ -20,7 +21,7 @@ Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed 
 
 ```lua
 {
-  'username/your-plugin',
+  'your-username/your-plugin',
 
   -- see lazy.nvim docs (`config.dev`): https://lazy.folke.io/configuration
   dev = true,
@@ -37,7 +38,7 @@ Ensure you have [lazydev.nvim](https://github.com/folke/lazydev.nvim) installed 
 
 ```lua
 {
-  'username/your-plugin',
+  'your-username/your-plugin',
   version = '*', -- only required with prebuilt binaries
 
   -- optional, see `lua/init.lua`
